@@ -28,6 +28,8 @@ public class SecondActivity extends BaseActivity {
         activity_main= (RelativeLayout) findViewById(R.id.activity_second);
         tv= (TextView) findViewById(R.id.tv);
         tv.setText("huituiceshi");
+
+        ////////
         activity_main.setVisibility(View.GONE);
     }
 
