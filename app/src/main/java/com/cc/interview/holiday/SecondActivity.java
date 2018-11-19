@@ -12,7 +12,7 @@ public class SecondActivity extends BaseActivity {
         init();
     }
 
-    private void init() {
+    public void init() {
         //init
     }
 
