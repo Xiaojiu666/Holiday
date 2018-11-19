@@ -41,6 +41,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
+
     /**
      * 权限检查方法，false代表没有该权限，ture代表有该权限
      */
