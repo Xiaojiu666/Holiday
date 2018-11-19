@@ -66,15 +66,18 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        doRequestPermissionsResult(requestCode, grantResults);
+       // doRequestPermissionsResult(requestCode, grantResults);
+        init();
     }
+public void init(){
 
-    /**
-     * 处理请求权限结果事件 * * @param requestCode 请求码 * @param grantResults 结果集
-     */
-    public void doRequestPermissionsResult(int requestCode, @NonNull int[] grantResults) {
-
-    }
+}
+//    /**
+//     * 处理请求权限结果事件 * * @param requestCode 请求码 * @param grantResults 结果集
+//     */
+//    public void doRequestPermissionsResult(int requestCode, @NonNull int[] grantResults) {
+//
+//    }
 //
 //    /**
 //     * 网络状态改变时间监听 * * @param netWorkState true有网络，false无网络
