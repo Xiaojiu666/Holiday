@@ -67,11 +67,7 @@ public class BaseActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
        // doRequestPermissionsResult(requestCode, grantResults);
-        init();
     }
-public void init(){
-
-}
 //    /**
 //     * 处理请求权限结果事件 * * @param requestCode 请求码 * @param grantResults 结果集
 //     */
