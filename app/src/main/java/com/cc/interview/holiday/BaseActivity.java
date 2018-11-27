@@ -1,18 +1,27 @@
 package com.cc.interview.holiday;
 
+import android.app.Dialog;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 public class BaseActivity extends AppCompatActivity {
+
+    private Dialog loadingDialog;
+    private View inflate;
+    private ImageView progress_view;
+    private AnimationDrawable progress_viewDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +37,37 @@ public class BaseActivity extends AppCompatActivity {
             // 透明导航栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
+    }
+
+    public void initDialog(){
+        loadingDialog=new Dialog(this,R.style.NormalDialogStyle);
+        inflate = LayoutInflater.from(this).inflate(R.layout.dialog_loading, null, true);
+        progress_view = inflate.findViewById(R.id.iv_loading);
+        progress_viewDrawable = (AnimationDrawable) progress_view.getDrawable();
+        setContentView(inflate);
+        loadingDialog.setCanceledOnTouchOutside(true);
+
+
+
 
     }
 
+    public void showDialog(){
+        if (!loadingDialog.isShowing()) {
+            loadingDialog.show();
+            if(progress_viewDrawable != null){
+                progress_viewDrawable.start();
+            }
+        }
+    }
+    public void disDialog(){
+        if (loadingDialog.isShowing()) {
+            loadingDialog.dismiss();
+            if(progress_viewDrawable != null){
+                progress_viewDrawable.stop();
+            }
+        }
+    }
     @Override
     protected void onResume() {
         super.onResume();
