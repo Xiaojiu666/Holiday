@@ -9,11 +9,18 @@ public class SecondActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        init();
+        //init(); ×¢ÊÍinit
+	add(); //ÐÂÔöadd
     }
 
     public void init() {
         //init
+	
+    }
+	
+	public void add() {
+        //add
+	
     }
 
 
