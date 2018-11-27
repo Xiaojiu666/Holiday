@@ -20,6 +20,7 @@ public class SecondActivity extends BaseActivity {
         setContentView(R.layout.activity_second);
         init();
         initData();
+        add(); //����add
     }
 
     private void initData() {
@@ -35,6 +36,8 @@ public class SecondActivity extends BaseActivity {
 
             }
         });
+
+
     }
 
     public void init() {
@@ -48,7 +51,11 @@ public class SecondActivity extends BaseActivity {
 
         initDialog();
         showDialog();
-
+	
+    }
+	
+	public void add() {
+        //add
     }
 
 
